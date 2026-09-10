@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winnie Frolik | Author of Historical Mysteries</title>
+    <meta name="description" content="Official website of Winnie Frolik, author of The Mary Grey Mysteries historical mystery series and other works of historical fiction.">
+    <meta property="og:title" content="Winnie Frolik | Author of Historical Mysteries">
+    <meta property="og:description" content="Official website of Winnie Frolik, author of The Mary Grey Mysteries historical mystery series.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="Winniefrolikcrop.png">
+    <link rel="apple-touch-icon" href="Winniefrolikcrop.png">
+
+    <!-- PAGE STYLES -->
+    <style>
+
+        /* ============================================
+           RESET AND BASE
+        ============================================ */
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --burgundy: #6B1E2E;
+            --burgundy-dark: #4A1020;
+            --burgundy-light: #8B2E42;
+            --forest-green: #2C4A3E;
+            --forest-green-light: #3D6B5A;
+            --parchment: #F4EDD8;
+            --parchment-dark: #EDE0C4;
+            --ivory: #FAF6EE;
+            --gold: #B8962E;
+            --gold-light: #D4AF55;
+            --charcoal: #2A2520;
+            --charcoal-light: #3D3530;
+            --copper: #9B5E3C;
+            --cream: #F8F3E8;
+            --text-body: #3D3530;
+            --text-light: #6B5E55;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--ivory);
+            color: var(--text-body);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ============================================
+           TYPOGRAPHY
+        ============================================ */
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+        }
+
+        .section-label {
+            font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .serif-italic {
+            font-style: italic;
+        }
+
+        /* ============================================
+           DECORATIVE ELEMENTS
+        ============================================ */
+
+        .ornament {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .ornament-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+
+        .ornament-diamond {
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        /* ============================================
+           NAVIGATION
+        ============================================ */
+
+        .nav-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+        .nav-wrapper.scrolled {
+            background: rgba(42, 37, 32, 0.97);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .nav-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .nav-logo-name {
+            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            font-weight: normal;
+            color: var(--parchment);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .nav-logo-tagline {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(244, 237, 216, 0.8);
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--parchment);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--gold);
+        }
+
+        /* Mobile Menu Button */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--parchment);
+            transition: all 0.3s ease;
+        }
+
+        .nav-toggle.open span:nth-child(1) {
+            transform: translateY(6.5px) rotate(45deg);
+        }
+
+        .nav-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.open span:nth-child(3) {
+            transform: translateY(-6.5px) rotate(-45deg);
+        }
+
+        /* Mobile Nav */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: rgba(42, 37, 32, 0.98);
+            backdrop-filter: blur(8px);
+            z-index: 999;
+            padding: 2rem;
+            border-top: 1px solid rgba(184, 150, 46, 0.3);
+            transform: translateY(-20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav.open {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .mobile-nav a {
+            display: block;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--parchment);
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(184, 150, 46, 0.15);
+        }
+
+        .mobile-nav a.active {
+            color: var(--gold);
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+
+        /* ============================================
+           HERO
+        ============================================ */
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: var(--charcoal);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('assets/hero-mystery.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.35;
+            transform: scale(1.05);
+            animation: heroZoom 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroZoom {
+            from { transform: scale(1.05); }
+            to { transform: scale(1.12); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(42, 37, 32, 0.2) 0%,
+                rgba(107, 30, 46, 0.15) 40%,
+                rgba(42, 37, 32, 0.7) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-eyebrow {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 1s ease 0.3s forwards;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: normal;
+            color: var(--parchment);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 1s ease 0.6s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(0.85rem, 2vw, 1.1rem);
+            color: rgba(244, 237, 216, 0.75);
+            font-style: italic;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 1s ease 0.9s forwards;
+        }
+
+        .hero-series {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: clamp(0.65rem, 1.5vw, 0.8rem);
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeSlideUp 1s ease 1.1s forwards;
+        }
+
+        .hero-ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeSlideUp 1s ease 1.3s forwards;
+        }
+
+        .hero-ornament-line {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold));
+        }
+
+        .hero-ornament-line.right {
+            background: linear-gradient(to left, transparent, var(--gold));
+        }
+
+        .hero-ornament-diamond {
+            width: 5px;
+            height: 5px;
+            background: var(--gold);
+            transform: rotate(45deg);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeSlideUp 1s ease 1.5s forwards;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            padding: 1rem 2.5rem;
+            background: var(--burgundy);
+            color: var(--parchment);
+            border: 1px solid var(--burgundy-light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--burgundy-dark);
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(107, 30, 46, 0.4);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--parchment);
+            border: 1px solid rgba(244, 237, 216, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0;
+            animation: fadeIn 1s ease 2s forwards;
+        }
+
+        .hero-scroll span {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: rgba(244, 237, 216, 0.5);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.4; transform: scaleY(1); }
+            50% { opacity: 1; transform: scaleY(1.1); }
+        }
+
+        /* ============================================
+           ANIMATIONS
+        ============================================ */
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ============================================
+           SECTIONS - SHARED
+        ============================================ */
+
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container-narrow {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: normal;
+            color: var(--charcoal);
+            text-align: center;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .section-intro {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            text-align: center;
+            font-style: italic;
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+            line-height: 1.8;
+        }
+
+        /* ============================================
+           AUTHOR INTRO SECTION
+        ============================================ */
+
+        .author-intro {
+            background: var(--parchment);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .author-intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+
+        .author-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .author-intro-image-wrap {
+            position: relative;
+        }
+
+        .author-intro-image-frame {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .author-intro-image-frame::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            right: 12px;
+            bottom: 12px;
+            border: 1px solid var(--gold);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .author-intro-image-frame::after {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: -12px;
+            bottom: -12px;
+            border: 1px solid var(--burgundy);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .author-intro-image {
+            width: 100%;
+            max-height: 520px;
+            object-fit: cover;
+            object-position: center top;
+            box-shadow: 0 20px 60px rgba(42, 37, 32, 0.25);
+            position: relative;
+            z-index: 1;
+        }
+
+        .author-intro-text .section-label {
+            margin-bottom: 1rem;
+        }
+
+        .author-intro-heading {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: normal;
+            color: var(--charcoal);
+            letter-spacing: 0.03em;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .author-intro-body {
+            font-size: 1rem;
+            color: var(--text-body);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+
+        .btn-green {
+            display: inline-block;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            padding: 1rem 2.5rem;
+            background: var(--forest-green);
+            color: var(--parchment);
+            border: 1px solid var(--forest-green-light);
+            transition: all 0.3s ease;
+        }
+
+        .btn-green:hover {
+            background: var(--forest-green-light);
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(44, 74, 62, 0.4);
+        }
+
+        /* ============================================
+           SERIES SECTION
+        ============================================ */
+
+        .series-section {
+            background: var(--charcoal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .series-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+
+        .series-section .section-label {
+            color: var(--gold);
+        }
+
+        .series-section .section-heading {
+            color: var(--parchment);
+        }
+
+        .series-section .section-intro {
+            color: rgba(244, 237, 216, 0.65);
+        }
+
+        .series-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .series-card {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .series-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .series-card-number {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+
+        .series-card-cover-wrap {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+            width: 100%;
+        }
+
+        .series-card-cover-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(184, 150, 46, 0.2);
+            pointer-events: none;
+        }
+
+        .series-card-cover {
+            width: 100%;
+            aspect-ratio: 2/3;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .series-card:hover .series-card-cover {
+            transform: scale(1.04);
+        }
+
+        .series-card-cover-placeholder {
+            width: 100%;
+            aspect-ratio: 2/3;
+            background: linear-gradient(135deg, var(--charcoal-light), var(--burgundy-dark));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .series-card-title {
+            font-size: 0.85rem;
+            font-weight: normal;
+            color: var(--parchment);
+            text-align: center;
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+            margin-bottom: 0.25rem;
+        }
+
+        .series-card-year {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            color: rgba(244, 237, 216, 0.45);
+            text-align: center;
+            margin-bottom: 0.75rem;
+        }
+
+        /* ============================================
+           BUY NOW BUTTON — SERIES CARDS
+        ============================================ */
+
+        .btn-buy-now {
+            display: inline-block;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            padding: 0.55rem 1.1rem;
+            background: var(--gold);
+            color: var(--charcoal);
+            border: 1px solid var(--gold-light);
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+            font-weight: 600;
+        }
+
+        .btn-buy-now:hover {
+            background: var(--gold-light);
+            border-color: var(--parchment);
+            color: var(--charcoal);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(184, 150, 46, 0.4);
+        }
+
+        /* ============================================
+           BUY NOW BUTTON — OTHER WORKS CARDS
+        ============================================ */
+
+        .btn-buy-now-green {
+            display: inline-block;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            padding: 0.6rem 1.2rem;
+            background: var(--forest-green);
+            color: var(--parchment);
+            border: 1px solid var(--forest-green-light);
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        .btn-buy-now-green:hover {
+            background: var(--forest-green-light);
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(44, 74, 62, 0.4);
+        }
+
+        .series-cta-wrap {
+            text-align: center;
+            margin-top: 3.5rem;
+        }
+
+        /* ============================================
+           LATEST BOOK SECTION
+        ============================================ */
+
+        .latest-book {
+            background: var(--cream);
+            position: relative;
+        }
+
+        .latest-book::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--burgundy), transparent);
+        }
+
+        .latest-book-grid {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .latest-book-cover-wrap {
+            position: relative;
+        }
+
+        .latest-book-cover-frame {
+            position: relative;
+        }
+
+        .latest-book-cover-frame::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: -20px;
+            bottom: -20px;
+            background: var(--burgundy);
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .latest-book-cover {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            box-shadow: 0 25px 70px rgba(42, 37, 32, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .latest-book-cover:hover {
+            transform: translateY(-6px) rotate(-0.5deg);
+            box-shadow: 0 35px 80px rgba(42, 37, 32, 0.4);
+        }
+
+        .latest-book-badge {
+            position: absolute;
+            top: -1rem;
+            right: -1rem;
+            z-index: 2;
+            width: 72px;
+            height: 72px;
+            background: var(--burgundy);
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(107, 30, 46, 0.4);
+        }
+
+        .badge-label {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .badge-year {
+            font-size: 0.75rem;
+            color: var(--parchment);
+            font-weight: normal;
+        }
+
+        .latest-book-text .section-label {
+            margin-bottom: 0.5rem;
+        }
+
+        .latest-book-series-tag {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .latest-book-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: normal;
+            color: var(--charcoal);
+            letter-spacing: 0.03em;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .latest-book-year {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            margin-bottom: 2rem;
+        }
+
+        .latest-book-desc {
+            font-size: 1.05rem;
+            color: var(--text-body);
+            line-height: 1.9;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--parchment-dark);
+        }
+
+        .latest-book-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .latest-book-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .meta-label {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+
+        .meta-value {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+        }
+
+        /* Latest book CTA row */
+        .latest-book-cta-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /* ============================================
+           OTHER WORKS
+        ============================================ */
+
+        .other-works {
+            background: var(--parchment);
+            position: relative;
+        }
+
+        .other-works::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--forest-green), transparent);
+        }
+
+        .other-works-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .other-work-card {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            background: var(--ivory);
+            border: 1px solid var(--parchment-dark);
+            position: relative;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .other-work-card:hover {
+            box-shadow: 0 12px 40px rgba(42, 37, 32, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .other-work-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--forest-green);
+        }
+
+        .other-work-cover-wrap {
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .other-work-cover {
+            width: 120px;
+            height: 180px;
+            object-fit: cover;
+            box-shadow: 0 6px 20px rgba(42, 37, 32, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .other-work-card:hover .other-work-cover {
+            transform: scale(1.03);
+        }
+
+        .other-work-cover-placeholder {
+            width: 120px;
+            height: 180px;
+            background: linear-gradient(135deg, var(--forest-green), var(--charcoal));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .other-work-title {
+            font-size: 1.2rem;
+            font-weight: normal;
+            color: var(--charcoal);
+            letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .other-work-year {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .other-work-note {
+            font-size: 0.88rem;
+            color: var(--text-light);
+            font-style: italic;
+            line-height: 1.6;
+            margin-top: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        /* ============================================
+           SOCIAL SECTION
+        ============================================ */
+
+        .social-section {
+            background: var(--charcoal);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .social-section .section-label {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .social-heading {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: normal;
+            color: var(--parchment);
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--parchment);
+            padding: 0.85rem 2rem;
+            border: 1px solid rgba(184, 150, 46, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .social-icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+
+        footer {
+            background: var(--burgundy-dark);
+            padding: 4rem 2rem 2rem;
+            color: var(--parchment);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(184, 150, 46, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.4rem;
+            font-weight: normal;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--parchment);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-brand-email {
+            font-size: 0.88rem;
+            color: rgba(244, 237, 216, 0.65);
+        }
+
+        .footer-brand-email a:hover {
+            color: var(--gold);
+        }
+
+        .footer-nav h4 {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-nav ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-nav ul li a {
+            font-size: 0.88rem;
+            color: rgba(244, 237, 216, 0.7);
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav ul li a:hover {
+            color: var(--parchment);
+        }
+
+        .footer-social h4 {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+            color: rgba(244, 237, 216, 0.7);
+            transition: color 0.3s ease;
+        }
+
+        .footer-social-link:hover {
+            color: var(--gold);
+        }
+
+        .footer-social-icon {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-copyright {
+            font-size: 0.78rem;
+            color: rgba(244, 237, 216, 0.4);
+            letter-spacing: 0.05em;
+        }
+
+        .footer-ornament {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-ornament-line {
+            width: 30px;
+            height: 1px;
+            background: rgba(184, 150, 46, 0.3);
+        }
+
+        .footer-ornament-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--gold);
+            transform: rotate(45deg);
+            opacity: 0.5;
+        }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+
+        @media (max-width: 1100px) {
+            .series-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .latest-book-grid {
+                grid-template-columns: 300px 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .author-intro-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .author-intro-image-wrap {
+                max-width: 360px;
+                margin: 0 auto;
+            }
+
+            .latest-book-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .latest-book-cover-wrap {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            .other-works-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .series-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .other-works-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary, .btn-outline {
+                width: 100%;
+                text-align: center;
+            }
+
+            .series-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .latest-book-meta {
+                gap: 1rem;
+            }
+
+            .latest-book-cta-row {
+                flex-direction: column;
+            }
+
+            .latest-book-cta-row .btn-primary,
+            .latest-book-cta-row .btn-buy-now-green {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-bg {
+                animation: none;
+            }
+            .reveal, .reveal-left, .reveal-right {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <div class="nav-wrapper" id="navWrapper">
+        <nav class="nav-container" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="nav-logo" aria-label="Winnie Frolik - Home">
+                <span class="nav-logo-name">Winnie Frolik</span>
+                <span class="nav-logo-tagline">Author of Historical Mysteries</span>
+            </a>
+            <ul class="nav-links" role="list">
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="mary-grey-mysteries.html">Mary Grey</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+            <a href="index.html" class="active" aria-current="page">Home</a>
+            <a href="about.html">About</a>
+            <a href="books.html">Books</a>
+            <a href="mary-grey-mysteries.html">Mary Grey Mysteries</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero section">
+        <div class="hero-bg" role="presentation" aria-hidden="true"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-content">
+            <span class="hero-eyebrow">Official Author Website</span>
+            <h1 class="hero-title">Winnie<br>Frolik</h1>
+            <p class="hero-subtitle">Author of Historical Mysteries</p>
+            <p class="hero-series">Creator of The Mary Grey Mysteries</p>
+            <div class="hero-ornament" aria-hidden="true">
+                <div class="hero-ornament-line"></div>
+                <div class="hero-ornament-diamond"></div>
+                <div class="hero-ornament-line right"></div>
+            </div>
+            <div class="hero-cta">
+                <a href="books.html" class="btn-primary">Explore the Books</a>
+                <a href="about.html" class="btn-outline">Meet Winnie</a>
+            </div>
+        </div>
+        <div class="hero-scroll" aria-hidden="true">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- AUTHOR INTRODUCTION -->
+    <section class="author-intro">
+        <div class="container">
+            <div class="author-intro-grid">
+                <div class="author-intro-image-wrap reveal-left">
+                    <div class="author-intro-image-frame">
+                        <img
+                            src="Winniefrolikcrop.png"
+                            alt="Winnie Frolik, author of historical mysteries"
+                            class="author-intro-image"
+                            loading="lazy"
+                        >
+                    </div>
+                </div>
+                <div class="author-intro-text reveal-right">
+                    <span class="section-label">The Author</span>
+                    <h2 class="author-intro-heading">The Author Behind the Mysteries</h2>
+                    <div class="ornament" aria-hidden="true">
+                        <div class="ornament-line"></div>
+                        <div class="ornament-diamond"></div>
+                        <div class="ornament-line"></div>
+                    </div>
+                    <p class="author-intro-body">
+                        Born and raised in Pittsburgh, Pennsylvania, Winnie Frolik has always found a home among books. Her lifelong love of reading eventually led her back to writing, where she has created stories filled with mystery, history, complex relationships, and unforgettable outsiders.
+                    </p>
+                    <a href="about.html" class="btn-green">Read Winnie's Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARY GREY SERIES -->
+    <section class="series-section">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <span class="section-label">A Five-Book Historical Mystery Series</span>
+                <h2 class="section-heading">The Mary Grey Mysteries</h2>
+                <p class="section-intro">Follow district nurse Mary Grey through a series of atmospheric historical mysteries spanning England and Europe in the years surrounding the Second World War.</p>
+            </div>
+
+            <div class="series-grid reveal">
+
+                <!-- Book 1: The Illhenny Murders -->
+                <div class="series-card">
+                    <div class="series-card-number">01</div>
+                    <div class="series-card-cover-wrap">
+                        <img
+                            src="TheIllhennyMurders.png"
+                            alt="The Illhenny Murders by Winnie Frolik"
+                            class="series-card-cover"
+                            loading="lazy"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+                        <div class="series-card-cover-placeholder" style="display:none;">
+                            <span style="color:var(--parchment); font-size:0.8rem; text-align:center;">The Illhenny Murders</span>
+                        </div>
+                    </div>
+                    <h3 class="series-card-title">The Illhenny Murders</h3>
+                    <span class="series-card-year">2021</span>
+                    <a
+                        href="https://www.amazon.com/Illhenny-Murders-Winnie-Frolik-ebook/dp/B0976QLWLM?ref_=ast_author_dp&th=1&psc=1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-buy-now"
+                        aria-label="Buy The Illhenny Murders on Amazon"
+                    >
+                        Buy Now
+                    </a>
+                </div>
+
+                <!-- Book 2: Death at Bayard Lodge -->
+                <div class="series-card">
+                    <div class="series-card-number">02</div>
+                    <div class="series-card-cover-wrap">
+                        <img
+                            src="DeathatBayardLodge.png"
+                            alt="Death at Bayard Lodge by Winnie Frolik"
+                            class="series-card-cover"
+                            loading="lazy"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+                        <div class="series-card-cover-placeholder" style="display:none;">
+                            <span style="color:var(--parchment); font-size:0.8rem; text-align:center;">Death at Bayard Lodge</span>
+                        </div>
+                    </div>
+                    <h3 class="series-card-title">Death at Bayard Lodge</h3>
+                    <span class="series-card-year">2022</span>
+                    <a
+                        href="https://www.amazon.com/Death-Bayard-Lodge-Mary-Mysteries-ebook/dp/B0BFJL54PS?ref_=ast_author_dp&th=1&psc=1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-buy-now"
+                        aria-label="Buy Death at Bayard Lodge on Amazon"
+                    >
+                        Buy Now
+                    </a>
+                </div>
+
+                <!-- Book 3: A Swing of the Axe -->
+                <div class="series-card">
+                    <div class="series-card-number">03</div>
+                    <div class="series-card-cover-wrap">
+                        <img
+                            src="ASwingoftheAxe.png"
+                            alt="A Swing of the Axe by Winnie Frolik"
+                            class="series-card-cover"
+                            loading="lazy"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+                        <div class="series-card-cover-placeholder" style="display:none;">
+                            <span style="color:var(--parchment); font-size:0.8rem; text-align:center;">A Swing of the Axe</span>
+                        </div>
+                    </div>
+                    <h3 class="series-card-title">A Swing of the Axe</h3>
+                    <span class="series-card-year">2023</span>
+                    <a
+                        href="https://www.amazon.com/Swing-Mary-Grey-Mysteries-Book-ebook/dp/B0CK174CQW?ref_=ast_author_dp"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-buy-now"
+                        aria-label="Buy A Swing of the Axe on Amazon"
+                    >
+                        Buy Now
+                    </a>
+                </div>
+
+                <!-- Book 4: Peril in Provence -->
+                <div class="series-card">
+                    <div class="series-card-number">04</div>
+                    <div class="series-card-cover-wrap">
+                        <img
+                            src="PerilinProvence.png"
+                            alt="Peril in Provence by Winnie Frolik"
+                            class="series-card-cover"
+                            loading="lazy"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+                        <div class="series-card-cover-placeholder" style="display:none;">
+                            <span style="color:var(--parchment); font-size:0.8rem; text-align:center;">Peril in Provence</span>
+                        </div>
+                    </div>
+                    <h3 class="series-card-title">Peril in Provence</h3>
+                    <span class="series-card-year">2024</span>
+                    <a
+                        href="https://www.amazon.com/Peril-Provence-Mary-Grey-Mysteries-ebook/dp/B0DCX2LL4W?ref_=ast_author_dp&th=1&psc=1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-buy-now"
+                        aria-label="Buy Peril in Provence on Amazon"
+                    >
+                        Buy Now
+                    </a>
+                </div>
+
+                <!-- Book 5: Gold, Frankincense, and Morphine -->
+                <div class="series-card">
+                    <div class="series-card-number">05</div>
+                    <div class="series-card-cover-wrap">
+                        <img
+                            src="Gold, FrankincenseandMorphine.png"
+                            alt="Gold, Frankincense, and Morphine by Winnie Frolik"
+                            class="series-card-cover"
+                            loading="lazy"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+                        <div class="series-card-cover-placeholder" style="display:none;">
+                            <span style="color:var(--parchment); font-size:0.8rem; text-align:center;">Gold, Frankincense, and Morphine</span>
+                        </div>
+                    </div>
+                    <h3 class="series-card-title">Gold, Frankincense, and Morphine</h3>
+                    <span class="series-card-year">2025</span>
+                    <a
+                        href="https://www.amazon.com/Gold-Frankincense-Morphine-Mary-Mysteries-ebook/dp/B0G44YC6T1?ref_=ast_author_dp"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-buy-now"
+                        aria-label="Buy Gold, Frankincense, and Morphine on Amazon"
+                    >
+                        Buy Now
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="series-cta-wrap reveal">
+                <a href="mary-grey-mysteries.html" class="btn-primary">Explore the Series</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LATEST BOOK -->
+    <section class="latest-book">
+        <div class="container">
+            <div class="latest-book-grid">
+                <div class="latest-book-cover-wrap reveal-left">
+                    <div class="latest-book-cover-frame">
+                        <img
+                            src="Gold, FrankincenseandMorphine.png"
+                            alt="Gold, Frankincense, and Morphine - the latest Mary Grey Mystery by Winnie Frolik"
+                            class="latest-book-cover"
+                            loading="lazy"
+                            onerror="this.style.display='none';"
+                        >
+                        <div class="latest-book-badge" aria-label="Published 2025">
+                            <span class="badge-label">New<br>for</span>
+                            <span class="badge-year">2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="latest-book-text reveal-right">
+                    <span class="section-label">The Latest Novel</span>
+                    <p class="latest-book-series-tag">The Mary Grey Mysteries, Book 5</p>
+                    <h2 class="latest-book-title">Gold, Frankincense, and Morphine</h2>
+                    <p class="latest-book-year">2025</p>
+                    <div class="ornament" aria-hidden="true">
+                        <div class="ornament-line"></div>
+                        <div class="ornament-diamond"></div>
+                        <div class="ornament-line"></div>
+                    </div>
+                    <p class="latest-book-desc">
+                        In December 1938, Mary is working at St. Stephen's Hospital in Rosby when a patient dies following what should have been a routine operation. Mary begins to suspect that something darker is happening. As the bodies begin to mount, Franz investigates while Harriet takes in a child refugee arriving through the Kindertransport.
+                    </p>
+                    <div class="latest-book-meta">
+                        <div class="latest-book-meta-item">
+                            <span class="meta-label">Series</span>
+                            <span class="meta-value">Mary Grey Mysteries</span>
+                        </div>
+                        <div class="latest-book-meta-item">
+                            <span class="meta-label">Book Number</span>
+                            <span class="meta-value">Five of Five</span>
+                        </div>
+                        <div class="latest-book-meta-item">
+                            <span class="meta-label">Published</span>
+                            <span class="meta-value">2025</span>
+                        </div>
+                    </div>
+                    <div class="latest-book-cta-row">
+                        <a href="books.html" class="btn-primary">Explore the Book</a>
+                        <a
+                            href="https://www.amazon.com/Gold-Frankincense-Morphine-Mary-Mysteries-ebook/dp/B0G44YC6T1?ref_=ast_author_dp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn-buy-now-green"
+                            aria-label="Buy Gold, Frankincense, and Morphine on Amazon"
+                        >
+                            Buy Now on Amazon
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OTHER WORKS -->
+    <section class="other-works">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <span class="section-label">Additional Writing</span>
+                <h2 class="section-heading">Other Works</h2>
+            </div>
+            <div class="other-works-grid">
+
+                <!-- Sarah Crow -->
+                <!--
+                    IMAGE SAVE INSTRUCTION:
+                    Save the Sarah Crow book cover image as: sarahcrow.png
+                    in the same folder as index.html
+                -->
+                <div class="other-work-card reveal">
+                    <div class="other-work-cover-wrap">
+                        <img
+                            src="sarahcrow.png"
+                            alt="Sarah Crow by Winnie Frolik"
+                            class="other-work-cover"
+                            loading="lazy"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+                        <div class="other-work-cover-placeholder" style="display:none;">
+                            <span style="color:var(--parchment); font-size:0.8rem; text-align:center;">Sarah Crow</span>
+                        </div>
+                    </div>
+                    <h3 class="other-work-title">Sarah Crow</h3>
+                    <span class="other-work-year">2020</span>
+                    <p class="other-work-note">Published by One Idea Press. Winnie's debut novel.</p>
+                    <a
+                        href="https://www.amazon.co.uk/Sarah-Crow-Winnefred-Frolik/dp/1944134182"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-buy-now-green"
+                        aria-label="Buy Sarah Crow on Amazon"
+                    >
+                        Buy Now on Amazon
+                    </a>
+                </div>
+
+                <!-- The Dog-Walking Diaries -->
+                <!--
+                    IMAGE SAVE INSTRUCTION:
+                    Save the Dog-Walking Diaries book cover image as: thedogdiaries.png
+                    in the same folder as index.html
+                -->
+                <div class="other-work-card reveal">
+                    <div class="other-work-cover-wrap">
+                        <img
+                            src="thedogdiaries.png"
+                            alt="The Dog-Walking Diaries by Winnie Frolik"
+                            class="other-work-cover"
+                            loading="lazy"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+                        <div class="other-work-cover-placeholder" style="display:none; background: linear-gradient(135deg, var(--forest-green), var(--charcoal)); width:120px; height:180px; align-items:center; justify-content:center;">
+                            <span style="color:var(--parchment); font-size:0.75rem; text-align:center; padding:0.5rem; font-style:italic; line-height:1.4;">The Dog-Walking Diaries</span>
+                        </div>
+                    </div>
+                    <h3 class="other-work-title">The Dog-Walking Diaries</h3>
+                    <p class="other-work-note">Self-published by Winnie Frolik.</p>
+                    <a
+                        href="https://www.amazon.com/Dog-Walking-Diaries-Year-Autistic-Dog-walker/dp/1520728646"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-buy-now-green"
+                        aria-label="Buy The Dog-Walking Diaries on Amazon"
+                    >
+                        Buy Now on Amazon
+                    </a>
+                </div>
+
+                <!-- 51 Women Senators -->
+                <!--
+                    IMAGE SAVE INSTRUCTION:
+                    Save the 51 Women Senators book cover image as: 51womensenator.png
+                    in the same folder as index.html
+                -->
+                <div class="other-work-card reveal">
+                    <div class="other-work-cover-wrap">
+                        <img
+                            src="50 winnie frolik.png"
+                            alt="51 Women Senators? by Winnie Frolik and Billy Herzig"
+                            class="other-work-cover"
+                            loading="lazy"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+                        <div class="other-work-cover-placeholder" style="display:none; background: linear-gradient(135deg, var(--burgundy-dark), var(--charcoal)); width:120px; height:180px; align-items:center; justify-content:center;">
+                            <span style="color:var(--parchment); font-size:0.75rem; text-align:center; padding:0.5rem; font-style:italic; line-height:1.4;">51 Women Senators?</span>
+                        </div>
+                    </div>
+                    <h3 class="other-work-title">51 Women Senators?</h3>
+                    <p class="other-work-note">Co-authored with Billy Herzig. A book about women in the United States Senate.</p>
+                    <a
+                        href="https://www.amazon.com/-/es/Winnie-Frolik/dp/1440193037"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-buy-now-green"
+                        aria-label="Buy 51 Women Senators? on Amazon"
+                    >
+                        Buy Now on Amazon
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL -->
+    <section class="social-section">
+        <div class="container reveal">
+            <span class="section-label">Follow Along</span>
+            <h2 class="social-heading">Connect with Winnie</h2>
+            <div class="ornament" aria-hidden="true" style="justify-content:center; max-width:300px; margin:0 auto 2rem;">
+                <div class="ornament-line" style="background:linear-gradient(to right, transparent, rgba(184,150,46,0.5));"></div>
+                <div class="ornament-diamond" style="background:var(--gold);"></div>
+                <div class="ornament-line" style="background:linear-gradient(to left, transparent, rgba(184,150,46,0.5));"></div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/wfrolik/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Follow Winnie Frolik on Facebook">
+                    <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
+                    </svg>
+                    Facebook
+                </a>
+                <a href="https://bsky.app/profile/winniethewitch.bsky.social" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Follow Winnie Frolik on Bluesky">
+                    <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8zm-2 4l-2 3h1.5v5h5v-5H16l-2-3h-4z"/>
+                    </svg>
+                    Bluesky: @winniethewitch.bsky.social
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>Winnie Frolik</h3>
+                    <p>Author of Historical Mysteries</p>
+                    <p class="footer-brand-email">
+                        <a href="mailto:wfrolik@hotmail.com">wfrolik@hotmail.com</a>
+                    </p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="mary-grey-mysteries.html">Mary Grey Mysteries</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.facebook.com/wfrolik/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook">
+                            <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
+                            </svg>
+                            Facebook
+                        </a>
+                        <a href="https://bsky.app/profile/winniethewitch.bsky.social" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Bluesky">
+                            <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8zm-2 4l-2 3h1.5v5h5v-5H16l-2-3h-4z"/>
+                            </svg>
+                            Bluesky
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; Winnie Frolik. All rights reserved.</p>
+                <div class="footer-ornament" aria-hidden="true">
+                    <div class="footer-ornament-line"></div>
+                    <div class="footer-ornament-dot"></div>
+                    <div class="footer-ornament-line"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PAGE JAVASCRIPT -->
+    <script>
+        // Scroll-triggered nav
+        const navWrapper = document.getElementById('navWrapper');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 60) {
+                navWrapper.classList.add('scrolled');
+            } else {
+                navWrapper.classList.remove('scrolled');
+            }
+        }, { passive: true });
+
+        // Mobile menu
+        const navToggle = document.getElementById('navToggle');
+        const mobileNav = document.getElementById('mobileNav');
+
+        navToggle.addEventListener('click', function() {
+            const isOpen = mobileNav.classList.contains('open');
+            mobileNav.classList.toggle('open');
+            navToggle.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', !isOpen);
+        });
+
+        // Close mobile menu on outside click
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+                mobileNav.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+        const revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(function(el) {
+            revealObserver.observe(el);
+        });
+
+        // Force nav scrolled if hero not visible on load
+        if (window.scrollY > 60) {
+            navWrapper.classList.add('scrolled');
+        }
+    </script>
+
+</body>
+</html>

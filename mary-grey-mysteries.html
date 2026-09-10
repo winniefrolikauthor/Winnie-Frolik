@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mary Grey Mysteries | Winnie Frolik</title>
+    <meta name="description" content="Explore The Mary Grey Mysteries, a five-book historical mystery series by Winnie Frolik. Follow district nurse Mary Grey through atmospheric mysteries in England and Europe in the years surrounding World War II.">
+    <meta property="og:title" content="The Mary Grey Mysteries | Winnie Frolik">
+    <meta property="og:description" content="A five-book historical mystery series featuring district nurse Mary Grey, spanning England and Europe in the years surrounding the Second World War.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="Winniefrolik.png">
+    <link rel="apple-touch-icon" href="Winniefrolik.png">
+
+    <!-- PAGE STYLES -->
+    <style>
+
+        /* ============================================
+           RESET AND BASE
+        ============================================ */
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --burgundy: #6B1E2E;
+            --burgundy-dark: #4A1020;
+            --burgundy-light: #8B2E42;
+            --forest-green: #2C4A3E;
+            --forest-green-light: #3D6B5A;
+            --parchment: #F4EDD8;
+            --parchment-dark: #EDE0C4;
+            --ivory: #FAF6EE;
+            --gold: #B8962E;
+            --gold-light: #D4AF55;
+            --charcoal: #2A2520;
+            --charcoal-light: #3D3530;
+            --cream: #F8F3E8;
+            --text-body: #3D3530;
+            --text-light: #6B5E55;
+        }
+
+        html { font-size: 16px; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--charcoal);
+            color: var(--text-body);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        ul { list-style: none; }
+
+        h1, h2, h3, h4 {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+        }
+
+        .section-label {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .ornament {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .ornament-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+
+        .ornament-diamond {
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        /* ============================================
+           NAVIGATION
+        ============================================ */
+
+        .nav-wrapper {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(42, 37, 32, 0.97);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .nav-logo { display: flex; flex-direction: column; align-items: flex-start; }
+
+        .nav-logo-name {
+            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            font-weight: normal;
+            color: var(--parchment);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .nav-logo-tagline {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(244, 237, 216, 0.8);
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--parchment); }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-links a.active { color: var(--gold); }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--parchment);
+            transition: all 0.3s ease;
+        }
+
+        .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .nav-toggle.open span:nth-child(2) { opacity: 0; }
+        .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 72px; left: 0; right: 0;
+            background: rgba(42, 37, 32, 0.98);
+            backdrop-filter: blur(8px);
+            z-index: 999;
+            padding: 2rem;
+            border-top: 1px solid rgba(184, 150, 46, 0.3);
+            transform: translateY(-20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav.open { display: block; transform: translateY(0); opacity: 1; }
+
+        .mobile-nav a {
+            display: block;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--parchment);
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(184, 150, 46, 0.15);
+        }
+
+        .mobile-nav a.active { color: var(--gold); }
+        .mobile-nav a:last-child { border-bottom: none; }
+
+        /* ============================================
+           HERO
+        ============================================ */
+
+        .page-hero {
+            background: var(--charcoal);
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 50%, rgba(107,30,46,0.25) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, rgba(44,74,62,0.2) 0%, transparent 60%);
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+
+        .hero-eyebrow {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 5.5vw, 5rem);
+            font-weight: normal;
+            color: var(--parchment);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.4s forwards;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            color: rgba(244, 237, 216, 0.65);
+            font-style: italic;
+            max-width: 560px;
+            margin: 0 auto 2rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.6s forwards;
+            line-height: 1.7;
+        }
+
+        .hero-ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.8s forwards;
+        }
+
+        .hero-line { width: 50px; height: 1px; background: var(--gold); opacity: 0.5; }
+        .hero-diamond { width: 5px; height: 5px; background: var(--gold); transform: rotate(45deg); }
+
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============================================
+           ANIMATIONS
+        ============================================ */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.9s ease, transform 0.9s ease;
+        }
+
+        .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.9s ease, transform 0.9s ease;
+        }
+
+        .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+        /* ============================================
+           LAYOUT
+        ============================================ */
+
+        section { padding: 6rem 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        /* ============================================
+           TIMELINE INTRO
+        ============================================ */
+
+        .series-intro {
+            background: var(--charcoal-light);
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        .series-intro::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(184,150,46,0.3), transparent);
+        }
+
+        .series-intro-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .series-intro-heading {
+            font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+            font-weight: normal;
+            color: var(--parchment);
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        .series-intro-body {
+            font-size: 1.05rem;
+            color: rgba(244, 237, 216, 0.7);
+            line-height: 1.9;
+        }
+
+        /* ============================================
+           READING ORDER TIMELINE
+        ============================================ */
+
+        .timeline-section {
+            background: var(--charcoal);
+            padding: 5rem 2rem 2rem;
+        }
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .timeline-heading {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: normal;
+            color: var(--parchment);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .timeline-strip {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1px;
+            background: rgba(184, 150, 46, 0.15);
+            border: 1px solid rgba(184, 150, 46, 0.15);
+        }
+
+        .timeline-item {
+            background: var(--charcoal);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            position: relative;
+            transition: background 0.3s ease;
+            cursor: default;
+        }
+
+        .timeline-item:hover {
+            background: rgba(184, 150, 46, 0.06);
+        }
+
+        .timeline-year {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-num {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            color: rgba(244, 237, 216, 0.4);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 0.82rem;
+            color: var(--parchment);
+            font-weight: normal;
+            line-height: 1.3;
+        }
+
+        /* ============================================
+           INDIVIDUAL BOOK ENTRIES
+        ============================================ */
+
+        .book-entries {
+            background: var(--charcoal);
+            padding: 3rem 2rem 6rem;
+        }
+
+        .book-entry {
+            max-width: 1100px;
+            margin: 0 auto 5rem;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 5rem;
+            align-items: start;
+            padding-bottom: 5rem;
+            border-bottom: 1px solid rgba(184, 150, 46, 0.1);
+        }
+
+        .book-entry:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .book-entry-reverse {
+            grid-template-columns: 1fr 300px;
+        }
+
+        /* Cover Column */
+        .book-entry-cover-col {
+            position: relative;
+        }
+
+        .book-entry-cover-frame {
+            position: relative;
+        }
+
+        .book-entry-cover-frame::before {
+            content: '';
+            position: absolute;
+            top: 10px; left: 10px;
+            right: -10px; bottom: -10px;
+            background: var(--burgundy);
+            opacity: 0.12;
+            z-index: 0;
+        }
+
+        .book-entry-reverse .book-entry-cover-frame::before {
+            left: -10px;
+            right: 10px;
+            background: var(--forest-green);
+            opacity: 0.12;
+        }
+
+        .book-entry-cover {
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            transition: transform 0.4s ease;
+        }
+
+        .book-entry-cover:hover {
+            transform: translateY(-6px) rotate(-0.5deg);
+        }
+
+        /* Text Column */
+        .book-entry-text {
+            padding-top: 0.5rem;
+        }
+
+        .book-entry-num {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 4rem;
+            letter-spacing: -0.02em;
+            color: rgba(184, 150, 46, 0.15);
+            line-height: 1;
+            margin-bottom: -1rem;
+            display: block;
+        }
+
+        .book-entry-year {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .book-entry-title {
+            font-size: clamp(1.6rem, 3vw, 2.5rem);
+            font-weight: normal;
+            color: var(--parchment);
+            letter-spacing: 0.03em;
+            margin-bottom: 1.5rem;
+            line-height: 1.15;
+        }
+
+        .book-entry-ornament {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .entry-ornament-line {
+            width: 50px;
+            height: 1px;
+            background: var(--gold);
+            opacity: 0.4;
+        }
+
+        .entry-ornament-diamond {
+            width: 5px;
+            height: 5px;
+            background: var(--gold);
+            transform: rotate(45deg);
+        }
+
+        .book-entry-desc {
+            font-size: 1rem;
+            color: rgba(244, 237, 216, 0.72);
+            line-height: 1.95;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            padding: 1rem 2.5rem;
+            background: var(--burgundy);
+            color: var(--parchment);
+            border: 1px solid var(--burgundy-light);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--burgundy-dark);
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(107, 30, 46, 0.4);
+        }
+
+        .btn-green {
+            display: inline-block;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            padding: 1rem 2.5rem;
+            background: var(--forest-green);
+            color: var(--parchment);
+            border: 1px solid var(--forest-green-light);
+            transition: all 0.3s ease;
+        }
+
+        .btn-green:hover {
+            background: var(--forest-green-light);
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(44, 74, 62, 0.4);
+        }
+
+        /* ============================================
+           SERIES CTA
+        ============================================ */
+
+        .series-cta {
+            background: var(--burgundy-dark);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .series-cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+
+        .series-cta-heading {
+            font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+            font-weight: normal;
+            color: var(--parchment);
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .series-cta-text {
+            font-size: 1rem;
+            color: rgba(244, 237, 216, 0.65);
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .series-cta-btns {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline-parchment {
+            display: inline-block;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--parchment);
+            border: 1px solid rgba(244, 237, 216, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-parchment:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+
+        footer {
+            background: var(--burgundy-dark);
+            padding: 4rem 2rem 2rem;
+            color: var(--parchment);
+        }
+
+        .footer-inner { max-width: 1200px; margin: 0 auto; }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(184, 150, 46, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.4rem;
+            font-weight: normal;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--parchment);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-brand-email a { font-size: 0.88rem; color: rgba(244, 237, 216, 0.65); }
+        .footer-brand-email a:hover { color: var(--gold); }
+
+        .footer-nav h4 {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-nav ul li { margin-bottom: 0.6rem; }
+        .footer-nav ul li a { font-size: 0.88rem; color: rgba(244, 237, 216, 0.7); }
+        .footer-nav ul li a:hover { color: var(--parchment); }
+
+        .footer-social h4 {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-social-links { display: flex; flex-direction: column; gap: 0.75rem; }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+            color: rgba(244, 237, 216, 0.7);
+        }
+
+        .footer-social-link:hover { color: var(--gold); }
+        .footer-social-icon { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-copyright { font-size: 0.78rem; color: rgba(244, 237, 216, 0.4); }
+
+        .footer-ornament { display: flex; align-items: center; gap: 0.5rem; }
+        .footer-ornament-line { width: 30px; height: 1px; background: rgba(184, 150, 46, 0.3); }
+        .footer-ornament-dot { width: 4px; height: 4px; background: var(--gold); transform: rotate(45deg); opacity: 0.5; }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+
+        @media (max-width: 1024px) {
+            .book-entry, .book-entry-reverse {
+                grid-template-columns: 240px 1fr;
+                gap: 3rem;
+            }
+
+            .timeline-strip {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .book-entry, .book-entry-reverse {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .book-entry-cover-col {
+                max-width: 240px;
+                margin: 0 auto;
+            }
+
+            .book-entry-num {
+                font-size: 2.5rem;
+            }
+
+            .footer-top { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-toggle { display: flex; }
+            section { padding: 4rem 1.5rem; }
+
+            .timeline-strip { grid-template-columns: repeat(2, 1fr); }
+
+            .footer-top { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .timeline-strip { grid-template-columns: 1fr; }
+
+            .series-cta-btns { flex-direction: column; align-items: center; }
+            .btn-primary, .btn-green, .btn-outline-parchment { width: 100%; text-align: center; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; transition: none; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <div class="nav-wrapper">
+        <nav class="nav-container" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="nav-logo" aria-label="Winnie Frolik - Home">
+                <span class="nav-logo-name">Winnie Frolik</span>
+                <span class="nav-logo-tagline">Author of Historical Mysteries</span>
+            </a>
+            <ul class="nav-links" role="list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="mary-grey-mysteries.html" class="active" aria-current="page">Mary Grey</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+        <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="books.html">Books</a>
+            <a href="mary-grey-mysteries.html" class="active" aria-current="page">Mary Grey Mysteries</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <!-- HERO -->
+    <section class="page-hero" aria-label="Mary Grey Mysteries hero">
+        <p class="hero-eyebrow">A Historical Mystery Series</p>
+        <h1 class="hero-title">The Mary Grey<br>Mysteries</h1>
+        <p class="hero-subtitle">Five historical mysteries featuring district nurse Mary Grey, spanning England and Europe in the years surrounding the Second World War.</p>
+        <div class="hero-ornament" aria-hidden="true">
+            <div class="hero-line"></div>
+            <div class="hero-diamond"></div>
+            <div class="hero-line"></div>
+        </div>
+    </section>
+
+    <!-- SERIES INTRO -->
+    <section class="series-intro">
+        <div class="series-intro-inner reveal">
+            <span class="section-label" style="display:block; text-align:center; margin-bottom:1.5rem;">About the Series</span>
+            <h2 class="series-intro-heading">Mary Grey, District Nurse</h2>
+            <div style="width:40px; height:1px; background:var(--gold); opacity:0.5; margin:1.5rem auto;"></div>
+            <p class="series-intro-body">
+                At the heart of the series is Mary Grey, a district nurse whose sharp mind and tenacious spirit draw her into mysteries far beyond her medical duties. Set against the gathering darkness of prewar Europe and the turbulence of the Second World War, the Mary Grey mysteries blend human drama, historical atmosphere, and compelling investigation. Alongside Franz Schaefer, an exiled Jewish German detective, and her beloved Harriet, Mary navigates a world of secrets, danger, and moral complexity.
+            </p>
+        </div>
+    </section>
+
+    <!-- READING ORDER TIMELINE -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="timeline-header reveal">
+                <span class="section-label" style="display:block; text-align:center;">Reading Order</span>
+                <h2 class="timeline-heading">The Complete Series</h2>
+            </div>
+            <div class="timeline-strip reveal" role="list" aria-label="Mary Grey Mysteries reading order">
+                <div class="timeline-item" role="listitem">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-num">Book 01</div>
+                    <div class="timeline-title">The Illhenny Murders</div>
+                </div>
+                <div class="timeline-item" role="listitem">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-num">Book 02</div>
+                    <div class="timeline-title">Death at Bayard Lodge</div>
+                </div>
+                <div class="timeline-item" role="listitem">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-num">Book 03</div>
+                    <div class="timeline-title">A Swing of the Axe</div>
+                </div>
+                <div class="timeline-item" role="listitem">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-num">Book 04</div>
+                    <div class="timeline-title">Peril in Provence</div>
+                </div>
+                <div class="timeline-item" role="listitem">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-num">Book 05</div>
+                    <div class="timeline-title">Gold, Frankincense, and Morphine</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDIVIDUAL BOOK ENTRIES -->
+    <section class="book-entries">
+
+        <!-- BOOK 1 -->
+        <div class="book-entry reveal">
+            <div class="book-entry-cover-col">
+                <div class="book-entry-cover-frame">
+                    <img
+                        src="TheIllhennyMurders.png"
+                        alt="The Illhenny Murders by Winnie Frolik"
+                        class="book-entry-cover"
+                        loading="lazy"
+                        onerror="this.style.display='none';"
+                    >
+                </div>
+            </div>
+            <div class="book-entry-text">
+                <span class="book-entry-num" aria-hidden="true">01</span>
+                <p class="book-entry-year">2021</p>
+                <h2 class="book-entry-title">The Illhenny Murders</h2>
+                <div class="book-entry-ornament" aria-hidden="true">
+                    <div class="entry-ornament-line"></div>
+                    <div class="entry-ornament-diamond"></div>
+                </div>
+                <p class="book-entry-desc">
+                    District nurse Mary Grey saves architect Anthony West after a car wreck, only to hear him insist that the crash was no accident. When Anthony later dies, Mary begins asking questions and finds herself drawn into a dangerous investigation alongside exiled Jewish German detective Franz Schaefer.
+                </p>
+                <a href="books.html" class="btn-primary">View All Books</a>
+            </div>
+        </div>
+
+        <!-- BOOK 2 -->
+        <div class="book-entry book-entry-reverse reveal">
+            <div class="book-entry-text">
+                <span class="book-entry-num" aria-hidden="true">02</span>
+                <p class="book-entry-year">2022</p>
+                <h2 class="book-entry-title">Death at Bayard Lodge</h2>
+                <div class="book-entry-ornament" aria-hidden="true">
+                    <div class="entry-ornament-line"></div>
+                    <div class="entry-ornament-diamond"></div>
+                </div>
+                <p class="book-entry-desc">
+                    Mary Grey and her lover Harriet visit Harriet's godmother in the Lake District, but their peaceful visit is shattered when newlywed Rachel Florry is found dead with her skull smashed. As Mary and Franz Schaefer investigate, hidden relationships and dangerous secrets begin to emerge.
+                </p>
+                <a href="books.html" class="btn-green">View All Books</a>
+            </div>
+            <div class="book-entry-cover-col">
+                <div class="book-entry-cover-frame">
+                    <img
+                        src="DeathatBayardLodge.png"
+                        alt="Death at Bayard Lodge by Winnie Frolik"
+                        class="book-entry-cover"
+                        loading="lazy"
+                        onerror="this.style.display='none';"
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!-- BOOK 3 -->
+        <div class="book-entry reveal">
+            <div class="book-entry-cover-col">
+                <div class="book-entry-cover-frame">
+                    <img
+                        src="ASwingoftheAxe.png"
+                        alt="A Swing of the Axe by Winnie Frolik"
+                        class="book-entry-cover"
+                        loading="lazy"
+                        onerror="this.style.display='none';"
+                    >
+                </div>
+            </div>
+            <div class="book-entry-text">
+                <span class="book-entry-num" aria-hidden="true">03</span>
+                <p class="book-entry-year">2023</p>
+                <h2 class="book-entry-title">A Swing of the Axe</h2>
+                <div class="book-entry-ornament" aria-hidden="true">
+                    <div class="entry-ornament-line"></div>
+                    <div class="entry-ornament-diamond"></div>
+                </div>
+                <p class="book-entry-desc">
+                    When one of Mary's old nursing-school colleagues is murdered, Mary and private detective Franz Schaefer travel north to investigate. The murdered nurse had alerted Scotland Yard to a suspected crime, and the village they enter appears to be hiding more than one secret.
+                </p>
+                <a href="books.html" class="btn-primary">View All Books</a>
+            </div>
+        </div>
+
+        <!-- BOOK 4 -->
+        <div class="book-entry book-entry-reverse reveal">
+            <div class="book-entry-text">
+                <span class="book-entry-num" aria-hidden="true">04</span>
+                <p class="book-entry-year">2024</p>
+                <h2 class="book-entry-title">Peril in Provence</h2>
+                <div class="book-entry-ornament" aria-hidden="true">
+                    <div class="entry-ornament-line"></div>
+                    <div class="entry-ornament-diamond"></div>
+                </div>
+                <p class="book-entry-desc">
+                    Mary hears that Harriet West has been arrested for murder in the French town of Munier. Mary travels to Provence, where Harriet confesses to the killing but claims she acted in self-defense. As Mary searches for the truth, more disturbing secrets come to light.
+                </p>
+                <a href="books.html" class="btn-green">View All Books</a>
+            </div>
+            <div class="book-entry-cover-col">
+                <div class="book-entry-cover-frame">
+                    <img
+                        src="PerilinProvence.png"
+                        alt="Peril in Provence by Winnie Frolik"
+                        class="book-entry-cover"
+                        loading="lazy"
+                        onerror="this.style.display='none';"
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!-- BOOK 5 -->
+        <div class="book-entry reveal">
+            <div class="book-entry-cover-col">
+                <div class="book-entry-cover-frame">
+                    <img
+                        src="Gold, FrankincenseandMorphine.png"
+                        alt="Gold, Frankincense, and Morphine by Winnie Frolik"
+                        class="book-entry-cover"
+                        loading="lazy"
+                        onerror="this.style.display='none';"
+                    >
+                </div>
+            </div>
+            <div class="book-entry-text">
+                <span class="book-entry-num" aria-hidden="true">05</span>
+                <p class="book-entry-year">2025</p>
+                <h2 class="book-entry-title">Gold, Frankincense, and Morphine</h2>
+                <div class="book-entry-ornament" aria-hidden="true">
+                    <div class="entry-ornament-line"></div>
+                    <div class="entry-ornament-diamond"></div>
+                </div>
+                <p class="book-entry-desc">
+                    In December 1938, Mary is working at St. Stephen's Hospital in Rosby when a patient dies following what should have been a routine operation. Mary begins to suspect that something darker is happening. As the bodies begin to mount, Franz investigates while Harriet takes in a child refugee arriving through the Kindertransport.
+                </p>
+                <a href="books.html" class="btn-primary">View All Books</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- SERIES CTA -->
+    <section class="series-cta">
+        <div class="container reveal">
+            <span class="section-label" style="display:block; text-align:center;">Begin the Journey</span>
+            <h2 class="series-cta-heading">Start with The Illhenny Murders</h2>
+            <p class="series-cta-text">Begin at the beginning and follow Mary Grey through five gripping historical mysteries.</p>
+            <div class="series-cta-btns">
+                <a href="books.html" class="btn-primary">View All Books</a>
+                <a href="contact.html" class="btn-outline-parchment">Contact Winnie</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>Winnie Frolik</h3>
+                    <p>Author of Historical Mysteries</p>
+                    <p class="footer-brand-email"><a href="mailto:wfrolik@hotmail.com">wfrolik@hotmail.com</a></p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="mary-grey-mysteries.html">Mary Grey Mysteries</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.facebook.com/wfrolik/" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                            <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
+                            Facebook
+                        </a>
+                        <a href="https://bsky.app/profile/winniethewitch.bsky.social" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                            <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8zm-2 4l-2 3h1.5v5h5v-5H16l-2-3h-4z"/></svg>
+                            Bluesky
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; Winnie Frolik. All rights reserved.</p>
+                <div class="footer-ornament" aria-hidden="true">
+                    <div class="footer-ornament-line"></div>
+                    <div class="footer-ornament-dot"></div>
+                    <div class="footer-ornament-line"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PAGE JAVASCRIPT -->
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const mobileNav = document.getElementById('mobileNav');
+
+        navToggle.addEventListener('click', function() {
+            const isOpen = mobileNav.classList.contains('open');
+            mobileNav.classList.toggle('open');
+            navToggle.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', !isOpen);
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+                mobileNav.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        const revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+        revealElements.forEach(function(el) { revealObserver.observe(el); });
+    </script>
+
+</body>
+</html>

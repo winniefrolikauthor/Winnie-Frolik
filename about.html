@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Winnie Frolik | Author of Historical Mysteries</title>
+    <meta name="description" content="Learn about Winnie Frolik, author of The Mary Grey Mysteries historical mystery series. Born in Pittsburgh, Pennsylvania, Winnie writes atmospheric historical mysteries set in England and Europe.">
+    <meta property="og:title" content="About Winnie Frolik | Author of Historical Mysteries">
+    <meta property="og:description" content="Learn about Winnie Frolik, author of The Mary Grey Mysteries historical mystery series.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+
+    <!-- PAGE STYLES -->
+    <style>
+
+        /* ============================================
+           RESET AND BASE
+        ============================================ */
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --burgundy: #6B1E2E;
+            --burgundy-dark: #4A1020;
+            --burgundy-light: #8B2E42;
+            --forest-green: #2C4A3E;
+            --forest-green-light: #3D6B5A;
+            --parchment: #F4EDD8;
+            --parchment-dark: #EDE0C4;
+            --ivory: #FAF6EE;
+            --gold: #B8962E;
+            --gold-light: #D4AF55;
+            --charcoal: #2A2520;
+            --charcoal-light: #3D3530;
+            --copper: #9B5E3C;
+            --cream: #F8F3E8;
+            --text-body: #3D3530;
+            --text-light: #6B5E55;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--ivory);
+            color: var(--text-body);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ============================================
+           TYPOGRAPHY
+        ============================================ */
+
+        h1, h2, h3, h4 {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+        }
+
+        .section-label {
+            font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* ============================================
+           DECORATIVE ELEMENTS
+        ============================================ */
+
+        .ornament {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .ornament-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+
+        .ornament-diamond {
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        /* ============================================
+           NAVIGATION
+        ============================================ */
+
+        .nav-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(42, 37, 32, 0.97);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .nav-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .nav-logo-name {
+            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            font-weight: normal;
+            color: var(--parchment);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .nav-logo-tagline {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(244, 237, 216, 0.8);
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--parchment);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--parchment);
+            transition: all 0.3s ease;
+        }
+
+        .nav-toggle.open span:nth-child(1) {
+            transform: translateY(6.5px) rotate(45deg);
+        }
+
+        .nav-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.open span:nth-child(3) {
+            transform: translateY(-6.5px) rotate(-45deg);
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: rgba(42, 37, 32, 0.98);
+            backdrop-filter: blur(8px);
+            z-index: 999;
+            padding: 2rem;
+            border-top: 1px solid rgba(184, 150, 46, 0.3);
+            transform: translateY(-20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav.open {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .mobile-nav a {
+            display: block;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--parchment);
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(184, 150, 46, 0.15);
+        }
+
+        .mobile-nav a.active {
+            color: var(--gold);
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+
+        /* ============================================
+           HERO
+        ============================================ */
+
+        .page-hero {
+            background: var(--charcoal);
+            padding: 10rem 2rem 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(107,30,46,0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+
+        .page-hero-eyebrow {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.2s forwards;
+        }
+
+        .page-hero-title {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: normal;
+            color: var(--parchment);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.4s forwards;
+        }
+
+        .page-hero-ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.6s forwards;
+        }
+
+        .hero-line {
+            width: 50px;
+            height: 1px;
+            background: var(--gold);
+            opacity: 0.5;
+        }
+
+        .hero-diamond {
+            width: 5px;
+            height: 5px;
+            background: var(--gold);
+            transform: rotate(45deg);
+        }
+
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============================================
+           ANIMATIONS
+        ============================================ */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ============================================
+           LAYOUT
+        ============================================ */
+
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container-narrow {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: normal;
+            color: var(--charcoal);
+            letter-spacing: 0.05em;
+        }
+
+        /* ============================================
+           AUTHOR PORTRAIT SECTION
+        ============================================ */
+
+        .author-portrait-section {
+            background: var(--parchment);
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .author-portrait-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+
+        .author-portrait-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        /* Portrait frame */
+        .portrait-frame-outer {
+            position: relative;
+        }
+
+        .portrait-frame-border {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .portrait-frame-border::before {
+            content: '';
+            position: absolute;
+            top: -14px;
+            left: -14px;
+            right: 14px;
+            bottom: 14px;
+            border: 1px solid var(--gold);
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .portrait-frame-border::after {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            right: -14px;
+            bottom: -14px;
+            border: 1px solid var(--burgundy);
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .author-portrait-img {
+            width: 100%;
+            max-height: 600px;
+            object-fit: cover;
+            object-position: center top;
+            box-shadow: 0 25px 60px rgba(42, 37, 32, 0.3);
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        .portrait-caption {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 1.25rem;
+        }
+
+        /* Bio text */
+        .bio-header .section-label {
+            margin-bottom: 0.75rem;
+        }
+
+        .bio-name {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: normal;
+            color: var(--charcoal);
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .bio-tagline {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .bio-body {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+        }
+
+        .bio-body p {
+            font-size: 1rem;
+            color: var(--text-body);
+            line-height: 1.95;
+        }
+
+        .bio-body p:first-child {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            font-style: italic;
+        }
+
+        /* ============================================
+           BOOKS OVERVIEW STRIP
+        ============================================ */
+
+        .books-strip {
+            background: var(--charcoal);
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        .books-strip::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+
+        .books-strip-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .books-strip-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .books-strip-heading {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: normal;
+            color: var(--parchment);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .books-strip-subtitle {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(244, 237, 216, 0.5);
+            margin-top: 0.5rem;
+        }
+
+        .books-strip-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.25rem;
+        }
+
+        .strip-book {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .strip-book:hover {
+            transform: translateY(-6px);
+        }
+
+        .strip-book-img-wrap {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+        }
+
+        .strip-book-img {
+            width: 100%;
+            aspect-ratio: 2/3;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .strip-book:hover .strip-book-img {
+            transform: scale(1.04);
+        }
+
+        .strip-book-num {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            color: var(--gold);
+            margin-bottom: 0.4rem;
+        }
+
+        .strip-book-title {
+            font-size: 0.78rem;
+            color: var(--parchment);
+            font-weight: normal;
+            line-height: 1.3;
+            margin-bottom: 0.25rem;
+        }
+
+        .strip-book-year {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            color: rgba(244, 237, 216, 0.4);
+        }
+
+        .books-strip-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* ============================================
+           CONNECT SECTION
+        ============================================ */
+
+        .connect-section {
+            background: var(--cream);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .connect-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--burgundy), transparent);
+        }
+
+        .connect-heading {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: normal;
+            color: var(--charcoal);
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .connect-text {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .connect-buttons {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            padding: 1rem 2.5rem;
+            background: var(--burgundy);
+            color: var(--parchment);
+            border: 1px solid var(--burgundy-light);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--burgundy-dark);
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(107, 30, 46, 0.4);
+        }
+
+        .btn-outline-dark {
+            display: inline-block;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--charcoal);
+            border: 1px solid var(--charcoal);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-dark:hover {
+            border-color: var(--gold);
+            color: var(--burgundy);
+            transform: translateY(-2px);
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+
+        footer {
+            background: var(--burgundy-dark);
+            padding: 4rem 2rem 2rem;
+            color: var(--parchment);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(184, 150, 46, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.4rem;
+            font-weight: normal;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--parchment);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-brand-email a {
+            font-size: 0.88rem;
+            color: rgba(244, 237, 216, 0.65);
+        }
+
+        .footer-brand-email a:hover {
+            color: var(--gold);
+        }
+
+        .footer-nav h4 {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-nav ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-nav ul li a {
+            font-size: 0.88rem;
+            color: rgba(244, 237, 216, 0.7);
+        }
+
+        .footer-nav ul li a:hover {
+            color: var(--parchment);
+        }
+
+        .footer-social h4 {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+            color: rgba(244, 237, 216, 0.7);
+        }
+
+        .footer-social-link:hover {
+            color: var(--gold);
+        }
+
+        .footer-social-icon {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-copyright {
+            font-size: 0.78rem;
+            color: rgba(244, 237, 216, 0.4);
+        }
+
+        .footer-ornament {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-ornament-line {
+            width: 30px;
+            height: 1px;
+            background: rgba(184, 150, 46, 0.3);
+        }
+
+        .footer-ornament-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--gold);
+            transform: rotate(45deg);
+            opacity: 0.5;
+        }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+
+        @media (max-width: 1024px) {
+            .author-portrait-grid {
+                grid-template-columns: 340px 1fr;
+                gap: 3.5rem;
+            }
+
+            .books-strip-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .author-portrait-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .portrait-frame-outer {
+                max-width: 380px;
+                margin: 0 auto;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-toggle { display: flex; }
+
+            section { padding: 4rem 1.5rem; }
+
+            .books-strip-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .connect-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary, .btn-outline-dark {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, .reveal-left, .reveal-right {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <div class="nav-wrapper" id="navWrapper">
+        <nav class="nav-container" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="nav-logo" aria-label="Winnie Frolik - Home">
+                <span class="nav-logo-name">Winnie Frolik</span>
+                <span class="nav-logo-tagline">Author of Historical Mysteries</span>
+            </a>
+            <ul class="nav-links" role="list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active" aria-current="page">About</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="mary-grey-mysteries.html">Mary Grey</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active" aria-current="page">About</a>
+            <a href="books.html">Books</a>
+            <a href="mary-grey-mysteries.html">Mary Grey Mysteries</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <!-- HERO -->
+    <section class="page-hero" aria-label="About page hero">
+        <p class="page-hero-eyebrow">Get to Know</p>
+        <h1 class="page-hero-title">About Winnie</h1>
+        <div class="page-hero-ornament" aria-hidden="true">
+            <div class="hero-line"></div>
+            <div class="hero-diamond"></div>
+            <div class="hero-line"></div>
+        </div>
+    </section>
+
+    <!-- AUTHOR PORTRAIT AND BIO -->
+    <section class="author-portrait-section">
+        <div class="author-portrait-grid">
+            <!-- Portrait -->
+            <div class="portrait-frame-outer reveal-left">
+                <div class="portrait-frame-border">
+                    <img
+                        src="Winniefrolikcrop.png"
+                        alt="Winnie Frolik, author of historical mysteries"
+                        class="author-portrait-img"
+                    >
+                </div>
+                <p class="portrait-caption">Winnie Frolik &mdash; Author</p>
+            </div>
+
+            <!-- Bio -->
+            <div class="reveal-right">
+                <div class="bio-header">
+                    <span class="section-label">Biography</span>
+                    <h2 class="bio-name">Winnie Frolik</h2>
+                    <p class="bio-tagline">Author of Historical Mysteries &nbsp;|&nbsp; Creator of The Mary Grey Mysteries</p>
+                    <div class="ornament" aria-hidden="true">
+                        <div class="ornament-line"></div>
+                        <div class="ornament-diamond"></div>
+                        <div class="ornament-line"></div>
+                    </div>
+                </div>
+                <div class="bio-body">
+                    <p>Born and raised in Pittsburgh, Pennsylvania, Winnie Frolik has always found a home among books.</p>
+                    <p>The Carnegie Library in Oakland was her second home growing up, and her lifelong love of reading eventually led her to pursue a double major in English Literature and Creative Writing.</p>
+                    <p>Winnie has worked in a variety of fields, including nonprofit organizations, food service, and pet care, but writing has continued to draw her back. Her fascination with outsiders and unconventional characters is reflected throughout her fiction, particularly in the complex protagonists and richly atmospheric worlds of her historical mysteries.</p>
+                    <p>Winnie is the author of The Mary Grey Mysteries, a five-book historical mystery series featuring The Illhenny Murders (2021), Death at Bayard Lodge (2022), A Swing of the Axe (2023), Peril in Provence (2024), and Gold, Frankincense, and Morphine (2025).</p>
+                    <p>Her first novel, Sarah Crow, was published by One Idea Press in 2020. She has also self-published The Dog-Walking Diaries and co-authored a book about women in the United States Senate with Billy Herzig.</p>
+                    <p>When she isn't writing or reading, Winnie enjoys spending time in her hometown of Pittsburgh with her better half, Smoky the Cat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKS OVERVIEW STRIP -->
+    <section class="books-strip">
+        <div class="books-strip-inner">
+            <div class="books-strip-header reveal">
+                <span class="section-label" style="color: var(--gold); justify-content:center; display:flex;">The Works</span>
+                <h2 class="books-strip-heading">The Mary Grey Mysteries</h2>
+                <p class="books-strip-subtitle">Complete Five-Book Series</p>
+            </div>
+            <div class="books-strip-grid reveal">
+                <div class="strip-book">
+                    <div class="strip-book-img-wrap">
+                        <img src="assets/THE-ILLHENNY-MURDERS.PNG" alt="The Illhenny Murders" class="strip-book-img" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <p class="strip-book-num">01</p>
+                    <h3 class="strip-book-title">The Illhenny Murders</h3>
+                    <span class="strip-book-year">2021</span>
+                </div>
+                <div class="strip-book">
+                    <div class="strip-book-img-wrap">
+                        <img src="assets/DEATH-AT-BAYARD-LODGE.PNG" alt="Death at Bayard Lodge" class="strip-book-img" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <p class="strip-book-num">02</p>
+                    <h3 class="strip-book-title">Death at Bayard Lodge</h3>
+                    <span class="strip-book-year">2022</span>
+                </div>
+                <div class="strip-book">
+                    <div class="strip-book-img-wrap">
+                        <img src="assets/A-SWING-OF-THE-AXE.PNG" alt="A Swing of the Axe" class="strip-book-img" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <p class="strip-book-num">03</p>
+                    <h3 class="strip-book-title">A Swing of the Axe</h3>
+                    <span class="strip-book-year">2023</span>
+                </div>
+                <div class="strip-book">
+                    <div class="strip-book-img-wrap">
+                        <img src="assets/PERIL-IN-PROVENCE.PNG" alt="Peril in Provence" class="strip-book-img" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <p class="strip-book-num">04</p>
+                    <h3 class="strip-book-title">Peril in Provence</h3>
+                    <span class="strip-book-year">2024</span>
+                </div>
+                <div class="strip-book">
+                    <div class="strip-book-img-wrap">
+                        <img src="assets/GOLD-FRANKINCENSE-AND-MORPHINE.PNG" alt="Gold, Frankincense, and Morphine" class="strip-book-img" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <p class="strip-book-num">05</p>
+                    <h3 class="strip-book-title">Gold, Frankincense, and Morphine</h3>
+                    <span class="strip-book-year">2025</span>
+                </div>
+            </div>
+            <div class="books-strip-cta reveal">
+                <a href="books.html" class="btn-primary">View All Books</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONNECT -->
+    <section class="connect-section">
+        <div class="container-narrow reveal">
+            <span class="section-label" style="display:block; text-align:center;">Get in Touch</span>
+            <h2 class="connect-heading">Connect with Winnie</h2>
+            <p class="connect-text">Have a question or simply want to say hello? Winnie would love to hear from you.</p>
+            <div class="connect-buttons">
+                <a href="contact.html" class="btn-primary">Contact Winnie</a>
+                <a href="books.html" class="btn-outline-dark">Explore the Books</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>Winnie Frolik</h3>
+                    <p>Author of Historical Mysteries</p>
+                    <p class="footer-brand-email">
+                        <a href="mailto:wfrolik@hotmail.com">wfrolik@hotmail.com</a>
+                    </p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="mary-grey-mysteries.html">Mary Grey Mysteries</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.facebook.com/wfrolik/" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                            <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
+                            </svg>
+                            Facebook
+                        </a>
+                        <a href="https://bsky.app/profile/winniethewitch.bsky.social" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                            <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8zm-2 4l-2 3h1.5v5h5v-5H16l-2-3h-4z"/>
+                            </svg>
+                            Bluesky
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; Winnie Frolik. All rights reserved.</p>
+                <div class="footer-ornament" aria-hidden="true">
+                    <div class="footer-ornament-line"></div>
+                    <div class="footer-ornament-dot"></div>
+                    <div class="footer-ornament-line"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PAGE JAVASCRIPT -->
+    <script>
+        // Mobile menu
+        const navToggle = document.getElementById('navToggle');
+        const mobileNav = document.getElementById('mobileNav');
+
+        navToggle.addEventListener('click', function() {
+            const isOpen = mobileNav.classList.contains('open');
+            mobileNav.classList.toggle('open');
+            navToggle.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', !isOpen);
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+                mobileNav.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+        const revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(function(el) {
+            revealObserver.observe(el);
+        });
+    </script>
+
+</body>
+</html>
