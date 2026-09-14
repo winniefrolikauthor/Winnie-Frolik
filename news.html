@@ -441,20 +441,18 @@
         }
 
         /* ============================================
-           EMPTY STATE
+           NEWS ARTICLE CARD
         ============================================ */
 
-        .empty-state {
-            text-align: center;
-            padding: 5rem 2rem;
+        .news-card {
             background: var(--cream);
             border: 1px solid rgba(184,150,62,0.2);
-            border-radius: var(--radius);
             position: relative;
             overflow: hidden;
+            margin-bottom: 2.5rem;
         }
 
-        .empty-state::before {
+        .news-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -464,64 +462,131 @@
             background: linear-gradient(90deg, var(--burgundy), var(--gold), var(--forest));
         }
 
-        .empty-state-icon {
-            width: 72px;
-            height: 72px;
-            margin: 0 auto 2rem;
-            border: 1px solid rgba(184,150,62,0.35);
-            border-radius: 50%;
+        .news-card-inner {
+            padding: 2.8rem 2.8rem 2.4rem;
+        }
+
+        .news-card-meta {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
-            justify-content: center;
-            background: var(--parchment);
+            gap: 1rem;
+            margin-bottom: 1.4rem;
         }
 
-        .empty-state-icon svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--gold);
-            fill: none;
-            stroke-width: 1.4;
+        .news-card-tag {
+            font-size: 0.6rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--parchment);
+            background: var(--forest);
+            padding: 0.3rem 0.85rem;
+            border-radius: 50px;
         }
 
-        .empty-state-title {
-            font-family: var(--font-serif);
-            font-size: 1.7rem;
-            color: var(--charcoal);
-            margin-bottom: 1rem;
-            letter-spacing: 0.02em;
-        }
-
-        .empty-state-text {
+        .news-card-date {
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
             color: var(--warm-grey);
-            font-size: 1rem;
-            max-width: 480px;
-            margin: 0 auto 2rem;
-            line-height: 1.8;
         }
 
-        .empty-state-divider {
+        .news-card-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+            color: var(--charcoal);
+            letter-spacing: 0.02em;
+            line-height: 1.25;
+            margin-bottom: 1.2rem;
+        }
+
+        .news-card-divider {
             width: 40px;
             height: 1px;
             background: var(--gold);
-            margin: 1.6rem auto;
+            margin-bottom: 1.4rem;
         }
 
-        .empty-state-cta {
-            display: inline-block;
-            font-size: 0.65rem;
-            letter-spacing: 0.25em;
+        .news-card-body {
+            font-size: 0.975rem;
+            color: var(--charcoal-light);
+            line-height: 1.85;
+            margin-bottom: 1.8rem;
+        }
+
+        .news-card-body p + p {
+            margin-top: 1rem;
+        }
+
+        /* Event details box */
+        .event-details-box {
+            background: var(--parchment);
+            border: 1px solid rgba(107,31,42,0.15);
+            border-left: 3px solid var(--burgundy);
+            padding: 1.6rem 1.8rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .event-details-box-title {
+            font-size: 0.62rem;
+            letter-spacing: 0.28em;
             text-transform: uppercase;
-            color: var(--parchment);
-            background: var(--burgundy);
-            padding: 0.9rem 2rem;
-            border: 1px solid var(--burgundy);
-            transition: background var(--transition), color var(--transition);
+            color: var(--gold);
+            margin-bottom: 1rem;
         }
 
-        .empty-state-cta:hover {
-            background: var(--burgundy-dark);
-            border-color: var(--burgundy-dark);
+        .event-details-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .event-details-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--charcoal-light);
+            line-height: 1.55;
+        }
+
+        .event-details-list li svg {
+            width: 15px;
+            height: 15px;
+            stroke: var(--burgundy);
+            fill: none;
+            stroke-width: 1.8;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .event-details-list li strong {
+            color: var(--charcoal);
+        }
+
+        .news-card-footer {
+            padding: 1.2rem 2.8rem;
+            border-top: 1px solid rgba(107,31,42,0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .news-card-footer-label {
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--warm-grey);
+        }
+
+        .news-card-footer-tag {
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--burgundy);
+            border: 1px solid rgba(107,31,42,0.25);
+            padding: 0.25rem 0.7rem;
+            border-radius: 50px;
         }
 
         /* ============================================
@@ -1039,6 +1104,14 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .news-card-inner {
+                padding: 2rem 1.6rem 1.8rem;
+            }
+
+            .news-card-footer {
+                padding: 1rem 1.6rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1068,6 +1141,15 @@
 
             .books-teaser {
                 padding: 3.5rem 1.2rem;
+            }
+
+            .news-card-inner {
+                padding: 1.6rem 1.2rem 1.4rem;
+            }
+
+            .news-card-footer {
+                padding: 1rem 1.2rem;
+                flex-wrap: wrap;
             }
         }
 
@@ -1167,21 +1249,64 @@
                     </p>
                 </div>
 
-                <!-- EMPTY STATE -->
-                <div class="empty-state reveal" role="status" aria-label="No news currently available">
-                    <div class="empty-state-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
-                        </svg>
+                <!-- NEWS CARD: BOUCHERCON 2026 -->
+                <article class="news-card reveal" aria-labelledby="bouchercon-title">
+                    <div class="news-card-inner">
+
+                        <div class="news-card-meta">
+                            <span class="news-card-tag">Upcoming Event</span>
+                            <time class="news-card-date" datetime="2026-10-21">October 21–25, 2026</time>
+                        </div>
+
+                        <h3 class="news-card-title" id="bouchercon-title">Bouchercon 2026 — Calgary, Alberta</h3>
+                        <div class="news-card-divider" aria-hidden="true"></div>
+
+                        <div class="news-card-body">
+                            <p>
+                                Winnie will be attending Bouchercon 2026 in Calgary, Alberta, where she will be part of the Author Fair, meeting readers, signing books, and discussing the world of the Mary Grey Mysteries with fans old and new.
+                            </p>
+                            <p>
+                                Winnie will also be sitting on a panel discussing writing characters with depth, where she will share her approach to bringing Mary Grey and the rich cast of the series to life on the page.
+                            </p>
+                        </div>
+
+                        <div class="event-details-box" aria-label="Author Fair event details">
+                            <div class="event-details-box-title">Author Fair Details</div>
+                            <ul class="event-details-list">
+                                <li>
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                    <span><strong>Date:</strong> Friday, October 23, 2026</span>
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span><strong>Time:</strong> 7:00–8:30 PM</span>
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                    <span><strong>Location:</strong> McLeod D Hall</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <p class="news-card-body">
+                            Stop by to say hello, browse the full Mary Grey Mysteries series, and pick up a signed copy. Winnie would love to meet you.
+                        </p>
+
                     </div>
-                    <h3 class="empty-state-title">New Updates Coming Soon</h3>
-                    <div class="empty-state-divider" aria-hidden="true"></div>
-                    <p class="empty-state-text">
-                        New updates from Winnie Frolik will appear here. In the meantime, explore the books or get in touch directly.
-                    </p>
-                    <a href="books.html" class="empty-state-cta">Explore the Books</a>
-                </div>
-                <!-- END EMPTY STATE -->
+                    <div class="news-card-footer">
+                        <span class="news-card-footer-label">Filed under:</span>
+                        <span class="news-card-footer-tag">Events</span>
+                        <span class="news-card-footer-tag">Author News</span>
+                    </div>
+                </article>
+                <!-- END NEWS CARD -->
 
             </div>
         </section>
